@@ -44,6 +44,12 @@ var squHandler = function(str) {
   return end + startConsonant + "ay";
 }
 
+var yHandler = function (str) {
+  var startConsonant = str.slice(0,1);
+  var end = str.slice(1, str.length);
+  return end + startConsonant + "ay";
+}
+
 
 
 

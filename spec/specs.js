@@ -41,3 +41,9 @@ describe('squHandler', function() {
     expect(squHandler("squeeze")).to.equal("eezesquay");
   })
 })
+
+describe('yHandler', function() {
+  it('should treat "y" at the start of word as consonant',  function() {
+    expect(yHandler("yellow")).to.equal("ellowyay");
+  })
+})
