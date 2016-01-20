@@ -17,3 +17,15 @@ describe("handlers", function() {
   });
 
 });
+
+describe('functionRouter', function() {
+ it('should reject non letter characters', function() {
+   expect(functionRouter('s#1')).to.equal('please enter a real word');
+ });
+});
+
+describe('caseChanger', function() {
+ it('should change all strings to lowercase', function() {
+   expect(caseChanger('Hello')).to.equal('hello');
+ });
+});

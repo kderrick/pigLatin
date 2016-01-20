@@ -20,6 +20,19 @@ var threeConsonantHandler = function(str) {
   return end + startConsonant + "ay";
 }
 
+var functionRouter = function(str) {
+  for (var i = 0; i < str.length; i++ ) {
+    if (str.charCodeAt(i) < 97 || str.charCodeAt(i) > 122) {
+      return "please enter a real word";
+    }
+  }
+};
+
+var caseChanger = function(str) {
+  return str.toLowerCase();
+};
+
+
 
 // var a = str.indexOf('a');
 // var e = str.indexOf('e');
