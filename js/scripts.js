@@ -20,7 +20,7 @@ var threeConsonantHandler = function(str) {
   return end + startConsonant + "ay";
 }
 
-var functionRouter = function(str) {
+var wordFilter = function(str) {
   for (var i = 0; i < str.length; i++ ) {
     if (str.charCodeAt(i) < 97 || str.charCodeAt(i) > 122) {
       return "please enter a real word";
@@ -50,6 +50,19 @@ var yHandler = function (str) {
   return end + startConsonant + "ay";
 }
 
+var functionRouter = function(str) {
+  if(str[0] === "a" || str[0] === "e" || str[0] === "i" || str[0] === "o" || str[0] === "u") {
+  return vowelHandler(str);
+} else if (str[0] === "q" ) {
+  return qHandler(str);
+} else if (str[0] === "y") {
+  return yHandler(str);
+} else if (str[1] === "q") {
+  return squHandler(str);
+}
+
+
+};
 
 
 

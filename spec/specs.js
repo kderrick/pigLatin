@@ -18,9 +18,9 @@ describe("handlers", function() {
 
 });
 
-describe('functionRouter', function() {
+describe('wordFilter', function() {
  it('should reject non letter characters', function() {
-   expect(functionRouter('s#1')).to.equal('please enter a real word');
+   expect(wordFilter('s#1')).to.equal('please enter a real word');
  });
 });
 
@@ -45,5 +45,20 @@ describe('squHandler', function() {
 describe('yHandler', function() {
   it('should treat "y" at the start of word as consonant',  function() {
     expect(yHandler("yellow")).to.equal("ellowyay");
+  })
+})
+
+describe('functionRouter', function() {
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("all")).to.equal("allay");
+  })
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("queen")).to.equal("eenquay");
+  })
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("yellow")).to.equal("ellowyay");
+  })
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("square")).to.equal("aresquay");
   })
 })
