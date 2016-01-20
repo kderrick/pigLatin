@@ -14,6 +14,12 @@ var twoConsonantHandler = function(str) {
   return end + startConsonant + "ay";
 }
 
+var threeConsonantHandler = function(str) {
+  var startConsonant = str.slice(0,3);
+  var end = str.slice(3, str.length);
+  return end + startConsonant + "ay";
+}
+
 
 // var a = str.indexOf('a');
 // var e = str.indexOf('e');

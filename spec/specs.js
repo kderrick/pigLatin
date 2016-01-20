@@ -11,4 +11,9 @@ describe("handlers", function() {
   it('move two consecutive starting consonants to the end and add "ay"', function() {
     expect(twoConsonantHandler("block")).to.equal('ockblay');
   });
+
+  it('move three consecutive starting consonants to the end and add "ay"', function() {
+    expect(threeConsonantHandler("stream")).to.equal('eamstray');
+  });
+
 });
