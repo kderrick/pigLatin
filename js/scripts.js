@@ -23,16 +23,11 @@ var threeConsonantHandler = function(str) {
 var wordFilter = function(str) {
   for (var i = 0; i < str.length; i++ ) {
     if (str.charCodeAt(i) < 97 || str.charCodeAt(i) > 122) {
-      return "please enter a real word";
+      alert("please enter a real word");
     } else {
-      caseChanger(str);
+      return str;
     }
   }
-};
-
-var caseChanger = function(str) {
-  var lowered = str.toLowerCase();
-   return functionRouter(lowered);
 };
 
 var qHandler = function(str) {
@@ -55,35 +50,37 @@ var yHandler = function (str) {
 
 
 var functionRouter = function(str) {
-
-  if(str[0] === "a" || str[0] === "e" || str[0] === "i" || str[0] === "o" || str[0] === "u") {
-    return vowelHandler(str);
-  } else if (str[0] === "q" ) {
-    return qHandler(str);
-  } else if (str[0] === "y") {
-    return yHandler(str);
-  } else if (str[1] === "q") {
-    return squHandler(str);
-  } else if (str[1] === "a" || str[1] === "e" || str[1] === "i" || str[1] === "o" || str[1] === "u") {
-    return singleConsonantHandler(str);
-  }else if (str[2] === "a" || str[2] === "e" || str[2] === "i" || str[2] === "o" || str[2] === "u") {
-    return twoConsonantHandler(str);
-  } else if (str[3] === "a" || str[3] === "e" || str[3] === "i" || str[3] === "o" || str[3] === "u") {
-    return threeConsonantHandler(str);
+  var lowered = str.toLowerCase();
+  var filtered = wordFilter(lowered);
+  if(filtered[0] === "a" || filtered[0] === "e" || filtered[0] === "i" || filtered[0] === "o" || filtered[0] === "u") {
+    return vowelHandler(filtered);
+  } else if (filtered[0] === "q" ) {
+    return qHandler(filtered);
+  } else if (filtered[0] === "y") {
+    return yHandler(filtered);
+  } else if (filtered[1] === "q") {
+    return squHandler(filtered);
+  } else if (filtered[1] === "a" || filtered[1] === "e" || filtered[1] === "i" || filtered[1] === "o" || filtered[1] === "u") {
+    return singleConsonantHandler(filtered);
+  }else if (filtered[2] === "a" || filtered[2] === "e" || filtered[2] === "i" || filtered[2] === "o" || filtered[2] === "u") {
+    return twoConsonantHandler(filtered);
+  } else if (filtered[3] === "a" || filtered[3] === "e" || filtered[3] === "i" || filtered[3] === "o" || filtered[3] === "u") {
+    return threeConsonantHandler(filtered);
   }
 
 };
+var translated = " "
+
+$(function() {
+  debugger;
+  $('form#pig-latin').submit(function(event){
+    var untranslated = $('input#english').val();
+    translated = functionRouter(untranslated);
+    $('div#result').show();
+    $('.output').text(translated);
 
 
 
-
-
-
-
-// var a = str.indexOf('a');
-// var e = str.indexOf('e');
-// var i = str.indexOf('i');
-// var o = str.indexOf('o');
-// var u = str.indexOf('u');
-// var y = str.indexOf('y');
-// var vowelArray = [a, e, i, o , u, y]
+    event.preventDefault();
+  });
+});
