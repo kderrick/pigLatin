@@ -69,15 +69,15 @@ var functionRouter = function(str) {
   }
 
 };
-var translated = " "
+var translated = " ";
 
 $(function() {
-  debugger;
   $('form#pig-latin').submit(function(event){
     var untranslated = $('input#english').val();
     translated = functionRouter(untranslated);
     $('div#result').show();
     $('.output').text(translated);
+    $('.untranslated').text(untranslated);
 
 
 
