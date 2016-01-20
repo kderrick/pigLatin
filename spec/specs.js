@@ -26,7 +26,7 @@ describe('wordFilter', function() {
 
 describe('caseChanger', function() {
  it('should change all strings to lowercase', function() {
-   expect(caseChanger('Hello')).to.equal('hello');
+   expect(caseChanger('Hello')).to.equal('ellohay');
  });
 });
 
@@ -70,4 +70,5 @@ describe('functionRouter', function() {
   it('should determine which handler to apply to a string',  function() {
     expect(functionRouter("stream")).to.equal("eamstray");
   })
+
 })
