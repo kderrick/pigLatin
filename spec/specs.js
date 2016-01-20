@@ -29,3 +29,15 @@ describe('caseChanger', function() {
    expect(caseChanger('Hello')).to.equal('hello');
  });
 });
+
+describe('qHandler', function() {
+  it('should move u with q for words starting with "qu"', function() {
+    expect(qHandler("quick")).to.equal("ickquay");
+  })
+})
+
+describe('squHandler', function() {
+  it('should move the "u" along with the "sq" to the end of the word',  function() {
+    expect(squHandler("squeeze")).to.equal("eezesquay");
+  })
+})
