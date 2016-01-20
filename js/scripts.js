@@ -52,15 +52,20 @@ var yHandler = function (str) {
 
 var functionRouter = function(str) {
   if(str[0] === "a" || str[0] === "e" || str[0] === "i" || str[0] === "o" || str[0] === "u") {
-  return vowelHandler(str);
-} else if (str[0] === "q" ) {
-  return qHandler(str);
-} else if (str[0] === "y") {
-  return yHandler(str);
-} else if (str[1] === "q") {
-  return squHandler(str);
-}
-
+    return vowelHandler(str);
+  } else if (str[0] === "q" ) {
+    return qHandler(str);
+  } else if (str[0] === "y") {
+    return yHandler(str);
+  } else if (str[1] === "q") {
+    return squHandler(str);
+  } else if (str[1] === "a" || str[1] === "e" || str[1] === "i" || str[1] === "o" || str[1] === "u") {
+    return singleConsonantHandler(str);
+  }else if (str[2] === "a" || str[2] === "e" || str[2] === "i" || str[2] === "o" || str[2] === "u") {
+    return twoConsonantHandler(str);
+  } else if (str[3] === "a" || str[3] === "e" || str[3] === "i" || str[3] === "o" || str[3] === "u") {
+    return threeConsonantHandler(str);
+  }
 
 };
 

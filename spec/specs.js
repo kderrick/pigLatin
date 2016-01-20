@@ -61,4 +61,13 @@ describe('functionRouter', function() {
   it('should determine which handler to apply to a string',  function() {
     expect(functionRouter("square")).to.equal("aresquay");
   })
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("back")).to.equal("ackbay");
+  })
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("block")).to.equal("ockblay");
+  })
+  it('should determine which handler to apply to a string',  function() {
+    expect(functionRouter("stream")).to.equal("eamstray");
+  })
 })
